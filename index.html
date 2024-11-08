@@ -3,53 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Urban AI Project</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Optional if you plan to add custom styles -->
+    <title>URBAN-AI: Circular Economy and Sustainability</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+        header, nav, main, footer {
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+        header {
+            background: #007BFF;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            font-size: 1.2rem;
+        }
+
+        /* Navigation Styles */
+        nav {
+            margin: 20px 0;
+            background: #f4f4f4;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            color: #0056b3;
+        }
+
+        /* Section Styles */
+        section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        section h2 {
+            margin-top: 0;
+            color: #007BFF;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        ul li {
+            margin: 10px 0;
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 10px 20px;
+            background: #007BFF;
+            color: white;
+            margin-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to Urban AI</h1>
-        <p>Advancing Circular Economy through AI-driven Urban Solutions</p>
+        <h1>URBAN-AI: Advancing Circular Economy and Sustainability</h1>
+        <p>A Global Resource Cadastre for Sustainable Urban Planning</p>
     </header>
-    
+
     <nav>
         <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#mission">Our Mission</a></li>
-            <li><a href="#projects">Projects</a></li>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#methodology">Methodology</a></li>
+            <li><a href="#case-studies">Case Studies</a></li>
+            <li><a href="#results">Results</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <main>
-        <section id="about">
-            <h2>About Urban AI</h2>
-            <p>Urban AI focuses on creating sustainable, circular solutions for urban environments by leveraging artificial intelligence and data-driven tools. Our goal is to help cities transition to more efficient resource use, fostering a circular economy.</p>
+        <section id="overview">
+            <h2>Project Overview</h2>
+            <p>URBAN-AI leverages cutting-edge artificial intelligence tools such as GPT-4V and Grounding DINO to create a comprehensive global resource cadastre. Our goal is to advance circular economy practices by addressing the challenge of insufficient building data, enabling sustainable and efficient urban development.</p>
+            <p>By integrating AI-powered analysis of building facades using street-level imagery, URBAN-AI offers insights into material inventorying, resource allocation, and urban planning strategies, specifically tailored for diverse urban environments around the world.</p>
         </section>
 
-        <section id="mission">
-            <h2>Our Mission</h2>
-            <p>We aim to integrate AI and digital tools into urban planning and resource management to drive the adoption of circular practices globally. Our projects focus on practical, scalable solutions for cities and communities.</p>
-        </section>
-
-        <section id="projects">
-            <h2>Projects</h2>
+        <section id="methodology">
+            <h2>Methodology</h2>
+            <p>URBAN-AI utilizes a workflow combining advanced AI models for urban analysis:</p>
             <ul>
-                <li><strong>Global Resource Cadastre</strong>: Developing a comprehensive database to facilitate circular construction practices.</li>
-                <li><strong>Waste Picker Cadastre</strong>: Empowering informal waste pickers through AI-driven mobile tools to track and utilize reusable materials.</li>
-                <li><strong>AI-driven Circular Economy Tools</strong>: Advanced tools and frameworks for scaling circular economy efforts.</li>
+                <li><strong>Grounding DINO:</strong> Used for zero-shot segmentation of building features from street-level imagery.</li>
+                <li><strong>GPT-4V:</strong> Provides detailed analyses, generating insights on architectural style, material types, and building conditions.</li>
+                <li>Data sources include publicly available repositories such as Google Street View and Mapillary, ensuring accessibility even in regions with limited data.</li>
             </ul>
+            <p>This methodology provides a scalable and automated approach to generate building-specific insights, forming the basis for a comprehensive resource cadastre that informs policy, economic planning, and sustainability efforts.</p>
+        </section>
+
+        <section id="case-studies">
+            <h2>Case Studies</h2>
+            <p>URBAN-AI was tested across six diverse cities to address specific urban challenges:</p>
+            <ul>
+                <li><strong>Zurich:</strong> Focus on historical conservation, with analysis of heritage value and architectural styles.</li>
+                <li><strong>San Francisco:</strong> Assessment of seismic vulnerability in multi-story buildings.</li>
+                <li><strong>Melbourne:</strong> Examination of energy efficiency in older building structures.</li>
+                <li><strong>Mumbai:</strong> Analysis of urban morphology and high-density residential areas.</li>
+                <li><strong>Cape Town:</strong> Identification of greening potential through green facades and roofs.</li>
+                <li><strong>Rio de Janeiro:</strong> Evaluation of flood vulnerability in various architectural styles.</li>
+            </ul>
+        </section>
+
+        <section id="results">
+            <h2>Results and Insights</h2>
+            <p>The implementation of URBAN-AI demonstrates its effectiveness in generating detailed building material density maps and resource inventories. This data supports urban mining, circular construction initiatives, and policy development for sustainable cities.</p>
+            <p>Our results highlight the potential for AI-driven methodologies to enhance traditional urban planning approaches, providing cost-effective, scalable solutions for stakeholders worldwide.</p>
         </section>
 
         <section id="contact">
             <h2>Contact Us</h2>
-            <p>If you are interested in collaborating or learning more, please reach out:</p>
-            <p>Email: <a href="mailto:contact@urbanai.org">contact@urbanai.org</a></p>
+            <p>For more information or collaboration inquiries, please reach out:</p>
+            <p>Email: <a href="mailto:draghu@ethz.ch">draghu@ethz.ch</a></p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Urban AI. All rights reserved.</p>
+        <p>&copy; 2024 URBAN-AI Project. All rights reserved.</p>
     </footer>
 </body>
 </html>
