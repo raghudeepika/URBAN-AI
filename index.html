@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Urban-Scale Facade Material Mapping from Street View Images Using Vision-Language Models for Circular Construction Planning</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <nav class="topbar">
+          <div class="toplinks">
+            <a href="#paper">Paper</a>
+            <a href="#explorer">Map Explorer</a>
+            <a href="#cities">Data</a>
+          </div>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <h1>URBAN-AI</h1>
+            <p class="lede" id="paper-abstract">Loading abstract...</p>
+            <div class="authors-block" id="authors-block">
+              <div class="authors-line" id="authors-line"></div>
+              <div class="affiliations" id="affiliations"></div>
+            </div>
+            <div class="hero-actions">
+              <a class="button primary" id="paper-link" href="./FCL/Main_Paper.pdf" target="_blank" rel="noreferrer">Read the paper</a>
+              <a class="button secondary" href="#explorer">Explore the maps</a>
+            </div>
+          </div>
+          <div class="hero-main-image">
+            <img src="./main-image.png" alt="URBAN-AI circular cadastre visualization" />
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="section logos-section">
+          <div class="logos-inline">
+            <div class="logo-group">
+              <div class="logo-group-title">Research Partners</div>
+              <div class="logo-rail">
+                <div class="logo-chip logo-eth"><img src="./eth.png" alt="ETH Zurich logo" /></div>
+                <div class="logo-chip logo-stanford"><img src="./stanford.png" alt="Stanford logo" /></div>
+                <div class="logo-chip logo-cea"><img src="./cea.png" alt="CEA logo" /></div>
+                <div class="logo-chip logo-gradient"><img src="./gradient%20spaces.png" alt="Gradient Spaces logo" /></div>
+              </div>
+            </div>
+            <div class="logo-group">
+              <div class="logo-group-title">Funding and Programme</div>
+              <div class="logo-rail two-up">
+                <div class="logo-chip logo-snsf"><img src="./snsf.png" alt="Swiss National Science Foundation logo" /></div>
+                <div class="logo-chip logo-fcl"><img src="./images.png" alt="Future Cities Laboratory Global logo" /></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section explorer" id="explorer">
+          <div class="section-heading">
+            <p class="eyebrow">Interactive Explorer</p>
+            <h2>Explore the 6 cities, compare and inspect the mapped results</h2>
+          </div>
+
+          <div class="explorer-layout">
+            <aside class="card controls">
+              <label><span>City</span><select id="city-select"></select></label>
+              <label><span>Result styling</span><select id="field-select"></select></label>
+
+              <div class="city-summary">
+                <h3 id="city-name">Loading...</h3>
+                <p id="city-focus"></p>
+              </div>
+
+              <div class="legend-wrap">
+                <h3>Legend</h3>
+                <div id="legend" class="legend"></div>
+              </div>
+            </aside>
+
+            <div class="map-panel card">
+              <div id="map"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="metrics-strip" id="paper">
+          <div id="metrics-grid" class="metrics-grid"></div>
+        </section>
+
+        <section class="section citation-section">
+          <div class="section-heading">
+            <p class="eyebrow">Citation</p>
+            <h2>Reference the paper</h2>
+          </div>
+          <article class="card citation-card">
+            <p id="citation-text"></p>
+          </article>
+        </section>
+
+        <section class="section figure-section">
+          <div class="workflow-panel">
+            <div class="workflow-grid">
+              <div class="workflow-side">
+                <div class="workflow-step">
+                  <h3>Street View Image Capture</h3>
+                  <p>~58k candidate street-view images retrieved across 6 cities</p>
+                </div>
+                <div class="workflow-step">
+                  <h3>Building Identification Using Grounded-SAM</h3>
+                  <p>9,254 high-confidence facade images retained across 6 cities</p>
+                </div>
+                <div class="workflow-step">
+                  <h3>Insights Generation Using GPT-4V</h3>
+                  <p>9,056 human-validated outputs across 6 cities</p>
+                </div>
+              </div>
+
+              <div class="workflow-cities">
+                <div class="workflow-city">
+                  <div class="workflow-city-name">Rio de Janeiro</div>
+                  <img src="./rio_1.png" alt="Rio de Janeiro workflow result preview" />
+                  <div class="workflow-tag">Facade Condition</div>
+                  <div class="workflow-value">Extensive deterioration, including peeling paint</div>
+                </div>
+                <div class="workflow-city">
+                  <div class="workflow-city-name">Mumbai</div>
+                  <img src="./mumbai_1.png" alt="Mumbai workflow result preview" />
+                  <div class="workflow-tag">Building Typology</div>
+                  <div class="workflow-value">Mixed-Use</div>
+                </div>
+                <div class="workflow-city">
+                  <div class="workflow-city-name">Zurich</div>
+                  <img src="./zurich_1.png" alt="Zurich workflow result preview" />
+                  <div class="workflow-tag">Historical Value Indicators</div>
+                  <div class="workflow-value">High; detailed masonry, ornate cornices, decorative quoins, elaborate balconies</div>
+                </div>
+                <div class="workflow-city">
+                  <div class="workflow-city-name">San Francisco</div>
+                  <img src="./sf_1.png" alt="San Francisco workflow result preview" />
+                  <div class="workflow-tag">Architectural Style</div>
+                  <div class="workflow-value">Victorian</div>
+                </div>
+                <div class="workflow-city">
+                  <div class="workflow-city-name">Melbourne</div>
+                  <img src="./melbourne_1.png" alt="Melbourne workflow result preview" />
+                  <div class="workflow-tag">Main Facade Material</div>
+                  <div class="workflow-value">Brick</div>
+                </div>
+                <div class="workflow-city">
+                  <div class="workflow-city-name">Cape Town</div>
+                  <img src="./capetown_1.png" alt="Cape Town workflow result preview" />
+                  <div class="workflow-tag">Roof Type</div>
+                  <div class="workflow-value">Pitched Roof</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="figure-caption" id="figure-caption"></div>
+        </section>
+
+        <section class="section cities" id="cities">
+          <div class="section-heading">
+            <p class="eyebrow">Six Cities</p>
+            <h2>1 framework across 6 cities, 6 urban datasets</h2>
+          </div>
+          <div id="city-cards" class="city-cards"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
