@@ -2,7 +2,9 @@
 
 **Urban-scale facade material mapping from street view images using vision–language models for circular construction planning**
 
-![URBAN-AI circular cadastre visualization](./main-image.png)
+<p align="center">
+  <img src="./main-image.png" alt="URBAN-AI circular cadastre visualization" width="600" />
+</p>
 
 URBAN-AI is a workflow that uses multimodal AI to infer building material and facade characteristics from street-level imagery, applied across six cities spanning high- to low-income contexts: **Zurich, San Francisco, Melbourne, Mumbai, Cape Town, and Rio de Janeiro**. This repository contains the companion website and the per-city facade-mapping result datasets.
 
