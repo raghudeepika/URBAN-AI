@@ -42,28 +42,7 @@ The study contributes two open resources: the **Global Building Facade Dataset**
 
 ## The website
 
-The site is a static front end — no build step and no framework. It renders the paper summary, an interactive [Leaflet](https://leafletjs.com/) map explorer for browsing and comparing per-city results, and download links for each city's result dataset. All page content is driven by a single data file (`data/site-data.json`), and each city's geometry is loaded on demand from its GeoJSON file.
-
-### Run it locally
-
-Because the page fetches JSON and GeoJSON at runtime, opening `index.html` directly from the file system will not work (browsers block `fetch` over the `file://` protocol). Serve the folder over HTTP instead:
-
-```bash
-# from the repository root
-python3 -m http.server 8000
-```
-
-Then open <http://localhost:8000> in your browser.
-
-Any equivalent static server works just as well, for example:
-
-```bash
-npx serve .
-```
-
-### Deployment
-
-The live version is hosted with **GitHub Pages** from the `main` branch. Pushing changes to `main` redeploys automatically within a minute or two. After a deploy, a hard refresh (`Ctrl/Cmd + Shift + R`) may be needed to clear cached copies of `data/site-data.json`.
+The [live site](https://raghudeepika.github.io/URBAN-AI/) presents the paper summary, an interactive [Leaflet](https://leafletjs.com/) map explorer for browsing and comparing the per-city results, and download links for each city's result dataset. It is a static front end driven by a single data file (`data/site-data.json`), with each city's geometry loaded on demand from its GeoJSON file.
 
 ---
 
