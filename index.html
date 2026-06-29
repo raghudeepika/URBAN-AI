@@ -57,6 +57,7 @@
           <div class="toplinks">
             <a href="#paper">Paper</a>
             <a href="#explorer">Map Explorer</a>
+            <a href="#demo">Demo</a>
             <a href="#cities">Data</a>
           </div>
         </nav>
@@ -129,6 +130,22 @@
             </div>
           </div>
         </section>
+
+        <!-- ===== Live demo (embedded) ===== -->
+        <section class="section" id="demo">
+          <iframe id="urbanai-demo-frame" src="./demo.html"
+                  style="width:100%;border:0;height:900px;overflow:hidden"
+                  title="URBAN-AI live demo" loading="lazy"></iframe>
+        </section>
+        <script>
+          window.addEventListener('message', function (e) {
+            if (e.data && e.data.type === 'urbanai-demo-height') {
+              var f = document.getElementById('urbanai-demo-frame');
+              if (f) f.style.height = e.data.height + 'px';
+            }
+          });
+        </script>
+        <!-- ===== /Live demo ===== -->
 
         <section class="metrics-strip" id="paper">
           <div id="metrics-grid" class="metrics-grid"></div>
