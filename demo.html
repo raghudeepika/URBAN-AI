@@ -143,9 +143,11 @@ const els = {
 };
 let imageDataUrl = null;
 
-[{city:'Melbourne',url:'https://raghudeepika.github.io/URBAN-AI/melbourne_1.png'},
- {city:'Zurich',url:'https://raghudeepika.github.io/URBAN-AI/zurich_1.png'},
- {city:'San Francisco',url:'https://raghudeepika.github.io/URBAN-AI/sf_1.png'}].forEach(s=>{
+[{city:'Building 1',url:'./building1.png'},
+ {city:'Building 2',url:'./building2.png'},
+ {city:'Building 3',url:'./building3.png'},
+ {city:'Building 4',url:'./building4.png'},
+ {city:'Building 5',url:'./building5.png'}].forEach(s=>{
   const b=document.createElement('button'); b.title=s.city; b.type='button';
   b.innerHTML=`<img src="${s.url}" alt="${s.city} sample facade" crossorigin="anonymous" />`;
   b.onclick=()=>loadFromUrl(s.url); els.sampleRail.appendChild(b);
